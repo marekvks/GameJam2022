@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    [SerializeField]
-    private float moveSpeed = 500f;
+    public float moveSpeed = 500f;
+
 
     private float horizontal;
     private float vertical;
