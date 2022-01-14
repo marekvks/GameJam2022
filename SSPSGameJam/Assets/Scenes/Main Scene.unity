@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 972822350}
-  smoothTime: 0.1
+  smoothTime: 0.3
   offset: {x: 0, y: 0, z: -10}
 --- !u!20 &519420031
 Camera:
@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 972822351}
+  moveSpeed: 250
 --- !u!114 &972822354
 MonoBehaviour:
   m_ObjectHideFlags: 0
