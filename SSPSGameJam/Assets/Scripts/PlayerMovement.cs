@@ -7,8 +7,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+<<<<<<< HEAD
     [SerializeField]
     private float moveSpeed = 500f;
+=======
+    public float moveSpeed = 500f;
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 
     private float horizontal;
     private float vertical;
