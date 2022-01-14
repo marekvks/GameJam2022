@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public float moveSpeed = 500f;
+    public static float moveSpeed = 500f;
 
     private float horizontal;
     private float vertical;
