@@ -534,6 +534,9 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+<<<<<<< HEAD
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
+=======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_Layer: 0
   m_Name: Buttons
@@ -571,6 +574,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444869515}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
@@ -752,6 +756,8 @@ AudioListener:
   m_Enabled: 1
 =======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
+=======
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -808,7 +814,11 @@ Transform:
   m_Children: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
+=======
+  m_Father: {fileID: 972822350}
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
   m_Father: {fileID: 972822350}
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
@@ -1566,10 +1576,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1661217571}
 =======
+=======
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1577,6 +1590,9 @@ RectTransform:
   - {fileID: 519420032}
   m_Father: {fileID: 2082307613}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
+=======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
@@ -1713,7 +1729,11 @@ Transform:
   rb: {fileID: 972822351}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   moveSpeed: 250
+=======
+  moveSpeed: 550
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
   moveSpeed: 550
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
@@ -2132,8 +2152,13 @@ Transform:
   m_Children: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
   m_RootOrder: 2
+=======
+  m_Father: {fileID: 2082307613}
+  m_RootOrder: 1
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
   m_Father: {fileID: 2082307613}
   m_RootOrder: 1
@@ -2176,6 +2201,7 @@ Transform:
   - {fileID: 2015450303}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
   m_RootOrder: 3
 =======
@@ -2214,6 +2240,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1589349081}
   m_RootOrder: 2
+=======
+  m_Father: {fileID: 2082307613}
+  m_RootOrder: 2
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
   m_Father: {fileID: 2082307613}
   m_RootOrder: 2
@@ -2511,9 +2541,12 @@ Transform:
   m_Children:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1157020009}
   - {fileID: 268243746}
 =======
+=======
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   - {fileID: 972822350}

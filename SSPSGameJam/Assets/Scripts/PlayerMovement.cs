@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField]
     private float moveSpeed = 500f;
+=======
+    public float moveSpeed = 500f;
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
 =======
     public float moveSpeed = 500f;
 >>>>>>> parent of bb9eca4 (Smooth Camera Follow)
