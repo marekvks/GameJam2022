@@ -728,7 +728,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -744,21 +743,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa5cfbf3b5e47143b6091d86cfc0e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 972822350}
-  smoothTime: 0.1
-  offset: {x: 0, y: 0, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -813,7 +797,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
+=======
+  m_Father: {fileID: 972822350}
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532682374
@@ -1563,9 +1551,16 @@ RectTransform:
   m_GameObject: {fileID: 1558854181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1661217571}
+=======
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 519420032}
+  m_Father: {fileID: 2082307613}
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1697,10 +1692,6 @@ Transform:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 972822351}
-  moveSpeed: 250
---- !u!114 &972822354
-MonoBehaviour:
->>>>>>> 4ce1d3b79f539fd7640b078f9dffc7db95d84f0a
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2108,8 +2099,13 @@ Transform:
   m_LocalPosition: {x: -0.0445, y: 0.0148, z: 0}
   m_LocalScale: {x: 17.799204, y: 10.036671, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
   m_RootOrder: 2
+=======
+  m_Father: {fileID: 2082307613}
+  m_RootOrder: 1
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834292327
 GameObject:
@@ -2142,8 +2138,13 @@ Transform:
   - {fileID: 2065212781}
   - {fileID: 1617441635}
   - {fileID: 2015450303}
+<<<<<<< HEAD
   m_Father: {fileID: 1157020009}
   m_RootOrder: 3
+=======
+  m_Father: {fileID: 2082307613}
+  m_RootOrder: 2
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892483484
 GameObject:
@@ -2467,8 +2468,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 1157020009}
   - {fileID: 268243746}
+=======
+  - {fileID: 972822350}
+  - {fileID: 1673218437}
+  - {fileID: 1834292328}
+>>>>>>> parent of bb9eca4 (Smooth Camera Follow)
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
