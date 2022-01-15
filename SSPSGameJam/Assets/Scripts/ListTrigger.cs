@@ -11,7 +11,7 @@ public class ListTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Collectables")
+        if (collision.tag == "Collectables" && FreezeGame.isPaused)
         {
             hint.SetActive(true);
         }
