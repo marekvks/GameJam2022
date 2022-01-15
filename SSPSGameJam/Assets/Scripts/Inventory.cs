@@ -23,6 +23,5 @@ public class Inventory : MonoBehaviour
         selectionMenu.SetActive(false);
         partMenu.SetActive(true);
         tempPart.SetActive(true);
-
     }
 }

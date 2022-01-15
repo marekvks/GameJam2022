@@ -6,6 +6,7 @@ public class FreezeGame : MonoBehaviour
 {
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
+    public Animator pauseMenuAnimator;
     public static bool isPaused = false;
     public static bool isInInventory = false;
 
@@ -14,7 +15,7 @@ public class FreezeGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory)
         {
             pauseMenu.SetActive(!isPaused);
-            if (isPaused) { Resume(); } else { Paused(); }
+            if (isPaused) { pauseMenuAnimator.SetBool("hide", true); Resume(); } else { Paused(); }
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
