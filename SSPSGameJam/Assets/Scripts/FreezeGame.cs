@@ -12,11 +12,12 @@ public class FreezeGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory && !isPaused)
         {
-            pauseMenu.SetActive(!isPaused);
-            if (isPaused) { pauseMenuAnimator.SetBool("hide", true); Resume(); } else { Paused(); }
+            Paused();
+            pauseMenu.SetActive(true);
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory && isPaused) { Resume(); }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             isInInventory = true;
@@ -35,6 +36,7 @@ public class FreezeGame : MonoBehaviour
         isInInventory = false;
         isPaused = false;
         Time.timeScale = 1;
+        pauseMenuAnimator.SetBool("hide", true);
     }
 
     
