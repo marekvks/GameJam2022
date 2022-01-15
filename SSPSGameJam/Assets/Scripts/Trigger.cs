@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ListTrigger : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     public GameObject hint;
 
     public Animator animator;
 
-    private bool isNearby = false;
+    public static bool isNearby = false;
 
     private void Update()
     {
