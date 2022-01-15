@@ -34,11 +34,17 @@ public class FreezeGame : MonoBehaviour
 
     public void Resume()
     {
+        if (!isInInventory)
+        {
+            pauseMenuAnimator.SetBool("hide", true);
+        }
+        else
+        {
+            inventoryAnimator.SetBool("hide", true);
+        }
         isInInventory = false;
         isPaused = false;
         Time.timeScale = 1;
-        pauseMenuAnimator.SetBool("hide", true);
-        inventoryAnimator.SetBool("hide", true);
     }
 
     

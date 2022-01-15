@@ -34,6 +34,7 @@ public class PickUp : MonoBehaviour
         tempList.Clear();
 
         gameList = GameObject.Find("Game/UI/Inventory/Selection/Part" + id);
+        Debug.Log(gameList.name);
         gameList.SetActive(true);
     }
 }
