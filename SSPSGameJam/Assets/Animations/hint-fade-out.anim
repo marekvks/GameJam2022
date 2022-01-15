@@ -178,7 +178,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.33333334
-    functionName: Hide
+    functionName: ActivelyHide
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 864300f7684ea0f46b84d787e98748fb, type: 3}
     floatParameter: 0

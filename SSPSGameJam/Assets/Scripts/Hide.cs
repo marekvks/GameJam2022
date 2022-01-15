@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Active : MonoBehaviour
+public class Hide : MonoBehaviour
 {
-    void Hide()
+    void ActivelyHide()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
