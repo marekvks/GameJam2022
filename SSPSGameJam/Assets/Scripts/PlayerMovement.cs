@@ -7,30 +7,20 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public float moveSpeed = 500f;
+    public float moveSpeed = 5f;
 
+    bool canMove;
+
+
+
+    private float horizontal;
     private float vertical;
-    private Vector3 mousePos;
-
-    public Camera cam;
-
-    private bool canMove = false;
-
-    private float destination;
-
-    private Ray ray;
-    private RaycastHit2D hit;
-
-    private void Start()
-    {
-    }
 
     void Update()
     {
-
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetAxisRaw("Vertical") == 1)
+        if (vertical == 1)
         {
             canMove = true;
         } else
@@ -42,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove)
-        { 
-            rb.velocity = new Vector2(destination * moveSpeed * Time.fixedDeltaTime, vertical * moveSpeed * Time.fixedDeltaTime);
+        {
+            transform.position += transform.right * moveSpeed * Time.fixedDeltaTime;
         }
     }
 }
