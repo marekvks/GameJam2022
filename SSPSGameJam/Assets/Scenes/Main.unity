@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 683723106}
-  smoothTime: 0.3
+  smoothTime: 0.1
   offset: {x: 0, y: 0, z: -10}
 --- !u!81 &67136577
 AudioListener:
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 683723109}
-  moveSpeed: 250
+  moveSpeed: 400
 --- !u!50 &683723109
 Rigidbody2D:
   serializedVersion: 4
