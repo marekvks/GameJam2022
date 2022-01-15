@@ -1450,8 +1450,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021682736, y: -0.017295357}
-  m_Size: {x: 0.45555574, y: 1.5862457}
+  m_Offset: {x: 0.028007144, y: -0.0172981}
+  m_Size: {x: 0.63517904, y: 1.7228596}
   m_Direction: 0
 --- !u!212 &683723111
 SpriteRenderer:
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.01
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
