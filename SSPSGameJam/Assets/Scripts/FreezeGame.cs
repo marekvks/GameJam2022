@@ -7,6 +7,7 @@ public class FreezeGame : MonoBehaviour
     public GameObject inventoryMenu;
     public GameObject pauseMenu;
     public Animator pauseMenuAnimator;
+    public Animator inventoryAnimator;
     public static bool isPaused = false;
     public static bool isInInventory = false;
 
@@ -18,12 +19,12 @@ public class FreezeGame : MonoBehaviour
             pauseMenu.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory && isPaused) { Resume(); }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !isPaused)
         {
             isInInventory = true;
-            inventoryMenu.SetActive(!isPaused);
-            if (isPaused) { Resume(); } else { Paused(); }
-        }
+            Paused();
+            inventoryMenu.SetActive(true);
+        } else if (Input.GetKeyDown(KeyCode.Tab) && isPaused) { Resume(); }
     }
     void Paused()
     {
@@ -37,6 +38,7 @@ public class FreezeGame : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         pauseMenuAnimator.SetBool("hide", true);
+        inventoryAnimator.SetBool("hide", true);
     }
 
     
