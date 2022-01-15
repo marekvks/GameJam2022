@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ListTrigger : MonoBehaviour
 {
+
+    public LayerMask collectables;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "List")
+        if (collision)
         {
             Debug.Log("Press E");
         }
