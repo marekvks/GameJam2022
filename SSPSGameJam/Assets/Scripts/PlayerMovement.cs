@@ -9,19 +9,41 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed = 500f;
 
-
-
-    private float horizontal;
     private float vertical;
+    private Vector3 mousePos;
+
+    public Camera cam;
+
+    private bool canMove = false;
+
+    private float destination;
+
+    private Ray ray;
+    private RaycastHit2D hit;
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+
         vertical = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetAxisRaw("Vertical") == 1)
+        {
+            canMove = true;
+        } else
+        {
+            canMove = false;
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime, vertical * moveSpeed * Time.fixedDeltaTime);
+        if (canMove)
+        { 
+            rb.velocity = new Vector2(destination * moveSpeed * Time.fixedDeltaTime, vertical * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }
