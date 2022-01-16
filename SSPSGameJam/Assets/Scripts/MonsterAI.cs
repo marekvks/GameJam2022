@@ -21,11 +21,8 @@ public class MonsterAI : MonoBehaviour
     private void Update()
     {
         playerPosition = new Vector2(player.position.x, player.position.y);
-        Debug.Log(isInReactor);
         if (isInReactor)
         {
-            MonsterAppearance();
-            Debug.Log(currentTime);
             currentTime += Time.deltaTime;
         }
     }
@@ -49,7 +46,7 @@ public class MonsterAI : MonoBehaviour
         Debug.Log(monsterRB.transform.position);
     }
 
-    private void MonsterAppearance()
+    public void MonsterAppearance()
     {
         switch(currentTime)
         {
