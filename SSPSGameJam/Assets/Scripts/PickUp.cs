@@ -15,6 +15,9 @@ public class PickUp : MonoBehaviour
     private GameObject scientist;
     private int savedScientists = 0;
 
+    private GameObject key;
+    private bool isKeyPickedUp = false;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyList)
@@ -27,11 +30,17 @@ public class PickUp : MonoBehaviour
             savedScientists += 1;
             ChangeText(scientistsSavedText, $"Scientists Saved: { savedScientists }");
         }
+
+        else if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyKey)
+        {
+            key.SetActive(false);
+            isKeyPickedUp = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Collectables") { list = collision.gameObject; } else if (collision.tag == "Scientists") { scientist = collision.gameObject; }
+        if (collision.tag == "Collectables") { list = collision.gameObject; } else if (collision.tag == "Scientists") { scientist = collision.gameObject; } else if (collision.tag == "Keys") { key = collision.gameObject; }
     }
 
 
