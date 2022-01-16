@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PickUp : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class PickUp : MonoBehaviour
     private GameObject key;
     public static bool isKeyPickedUp = false;
 
+
+
+    public GameObject endMenu;
+
+
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyList)
@@ -30,7 +38,6 @@ public class PickUp : MonoBehaviour
             savedScientists += 1;
             ChangeText(scientistsSavedText, $"Scientists Saved: { savedScientists }");
         }
-
         else if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyKey)
         {
             key.SetActive(false);
@@ -41,6 +48,10 @@ public class PickUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collectables") { list = collision.gameObject; } else if (collision.tag == "Scientists") { scientist = collision.gameObject; } else if (collision.tag == "Keys") { key = collision.gameObject; }
+        if (collision.name == "CameraTrigger")
+        {
+            endMenu.SetActive(true);
+        }
     }
 
 
@@ -62,4 +73,10 @@ public class PickUp : MonoBehaviour
     {
         textObject.text = message;
     }
+
+    public void OnClickExit()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
 }

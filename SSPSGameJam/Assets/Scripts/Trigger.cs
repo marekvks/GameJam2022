@@ -30,7 +30,8 @@ public class Trigger : MonoBehaviour
         {
             isNearbyList = true;
             hint.SetActive(true);
-        } else if (collision.tag == "Scientists")
+        }
+        else if (collision.tag == "Scientists")
         {
             isNearbyScientist = true;
             hint.SetActive(true);
@@ -39,7 +40,8 @@ public class Trigger : MonoBehaviour
         {
             isNearbyKey = true;
             hint.SetActive(true);
-        } else if (collision.name == "Garage Door")
+        }
+        else if (collision.name == "Garage Door")
         {
             isNearbyGarage = true;
             hint.SetActive(true);
