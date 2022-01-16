@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FreezeGame : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class FreezeGame : MonoBehaviour
     public Animator inventoryAnimator;
     public static bool isPaused = false;
     public static bool isInInventory = false;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !isInInventory && !isPaused)
@@ -47,6 +47,9 @@ public class FreezeGame : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 
 }
