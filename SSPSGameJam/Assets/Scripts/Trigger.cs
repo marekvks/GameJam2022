@@ -8,14 +8,15 @@ public class Trigger : MonoBehaviour
 
     public Animator animator;
 
-    public static bool isNearby = false;
+    public static bool isNearbyList = false;
+    public static bool isNearbyScientist = false;
 
     private void Update()
     {
-        if (FreezeGame.isPaused && isNearby)
+        if (FreezeGame.isPaused && (isNearbyList || isNearbyScientist))
         {
             hint.SetActive(false);
-        } else if (!FreezeGame.isPaused && isNearby)
+        } else if (!FreezeGame.isPaused && (isNearbyList || isNearbyScientist))
         {
             hint.SetActive(true);
         }
@@ -25,14 +26,19 @@ public class Trigger : MonoBehaviour
     {
         if (collision.tag == "Collectables")
         {
-            isNearby = true;
+            isNearbyList = true;
+            hint.SetActive(true);
+        } else if (collision.tag == "Scientists")
+        {
+            isNearbyScientist = true;
             hint.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isNearby = false;
+        isNearbyList = false;
+        isNearbyScientist = false;
         animator.SetBool("hide", true);
     }
 }
