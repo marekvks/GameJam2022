@@ -9,7 +9,7 @@ public class PlayerRotate : MonoBehaviour
     public Camera cam;
 
     public float degree = 90f;
-    
+
     Vector2 mousePos;
 
     void Update()

@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     bool canMove;
 
-
-
-    private float horizontal;
     private float vertical;
 
     void Update()
