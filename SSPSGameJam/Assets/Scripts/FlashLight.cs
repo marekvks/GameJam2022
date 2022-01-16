@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FlashLight : MonoBehaviour
 {
+    public TextMeshProUGUI percentText;
     public GameObject flashlight;
+    private float maxCapacity = 60;
     private float battery = 60;
+    private float percent;
     private bool isFlashlightOn = true;
 
     void Update()
@@ -27,14 +31,13 @@ public class FlashLight : MonoBehaviour
         {
             if (!isFlashlightOn)
             {
-                if (battery >= 60)
-                {
-                    battery = 60;
-                } else
-                { 
-                    battery += 2;
-                }
+                battery += 2;
             }
+        }
+
+        if (percent > 100)
+        {
+            battery = 60;
         }
 
         if (isFlashlightOn)
@@ -50,6 +53,12 @@ public class FlashLight : MonoBehaviour
             }
         }
 
-        Debug.Log(battery);
+        PercentAndUI();
+    }
+
+    void PercentAndUI()
+    {
+        percent = Mathf.Round(battery / (maxCapacity / 100));
+        PickUp.ChangeText(percentText, $"Battery: { percent }%");
     }
 }

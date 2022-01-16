@@ -58,7 +58,7 @@ public class PickUp : MonoBehaviour
         gameList.SetActive(true);
     }
 
-    private void ChangeText(TextMeshProUGUI textObject, string message)
+    public static void ChangeText(TextMeshProUGUI textObject, string message)
     {
         textObject.text = message;
     }
