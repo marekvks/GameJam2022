@@ -2225,7 +2225,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527784447}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1395210753}
+        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
+        m_MethodName: OnClickExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &527784447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100400,7 +100412,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1058178425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1395210753}
+        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
+        m_MethodName: OnClickExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1058178425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102772,6 +102796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scientistsSavedText: {fileID: 303082042}
+  endMenu: {fileID: 1481188731}
 --- !u!114 &1395210754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102942,7 +102967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1481188732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -103595,7 +103620,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.01
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000858a38702976598e6171e362
