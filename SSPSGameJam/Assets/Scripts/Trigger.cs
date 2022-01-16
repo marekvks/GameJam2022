@@ -10,6 +10,7 @@ public class Trigger : MonoBehaviour
 
     public static bool isNearbyList = false;
     public static bool isNearbyScientist = false;
+    public static bool isNearbyKey = false;
 
     private void Update()
     {
@@ -33,12 +34,18 @@ public class Trigger : MonoBehaviour
             isNearbyScientist = true;
             hint.SetActive(true);
         }
+        else if (collision.tag == "Keys")
+        {
+            isNearbyKey = true;
+            hint.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isNearbyList = false;
         isNearbyScientist = false;
+        isNearbyKey = false;
         animator.SetBool("hide", true);
     }
 }
