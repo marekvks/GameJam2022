@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MonsterAI : MonoBehaviour
 {
+<<<<<<< HEAD
     private float degree = 0f;
     public static float monsterSpeed = 0f;
     private Vector2 playerPosition;
@@ -18,17 +19,47 @@ public class MonsterAI : MonoBehaviour
     {
         monsterRB = gameObject.GetComponent<Rigidbody2D>();
     }
+=======
+    public float degree = 0f;
+    private float speed = 4.8f;
+    private Vector2 playerPosition;
+    public Transform player;
+    public Rigidbody2D monsterRB;
+    private float tempPlayerSpeed;
+    private float tempMonsterSpeed;
+
+>>>>>>> parent of 4b5a6fd (MonsterAI)
 
     private void Update()
     {
         playerPosition = new Vector2(player.position.x, player.position.y);
+<<<<<<< HEAD
         MonsterDisappear();
+=======
+>>>>>>> parent of 4b5a6fd (MonsterAI)
     }
 
     private void FixedUpdate()
     {
         MonsterMove();
         Rotate();
+    }
+
+    IEnumerator MonsterAppearance()
+    {
+        tempPlayerSpeed = PlayerMovement.moveSpeed;
+        tempMonsterSpeed = speed;
+        speed = 0f;
+        PlayerMovement.moveSpeed = 0f;
+        yield return new WaitForSeconds(3);
+        PlayerMovement.moveSpeed = tempPlayerSpeed;
+        speed = tempMonsterSpeed;
+
+        monsterRB.gameObject.SetActive(true);
+        yield return new WaitForSeconds(15);
+        speed /= 2;
+        yield return new WaitForSeconds(5);
+        monsterRB.gameObject.SetActive(false);
     }
 
     private void Rotate()
@@ -43,6 +74,7 @@ public class MonsterAI : MonoBehaviour
         monsterRB.transform.position += monsterSpeed * Time.fixedDeltaTime * (-monsterRB.transform.right);
     }
 
+<<<<<<< HEAD
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "East")
@@ -62,5 +94,8 @@ public class MonsterAI : MonoBehaviour
             }
         }
     }
+=======
+
+>>>>>>> parent of 4b5a6fd (MonsterAI)
 }
 

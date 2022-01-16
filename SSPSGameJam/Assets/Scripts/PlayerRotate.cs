@@ -10,16 +10,11 @@ public class PlayerRotate : MonoBehaviour
 
     public float degree = 90f;
 
-    public static bool canRotate = true;
-
     Vector2 mousePos;
 
     void Update()
     {
-        if (canRotate)
-        {
-            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()

@@ -33,11 +33,13 @@ public class Trigger : MonoBehaviour
         {
             isNearbyScientist = true;
             hint.SetActive(true);
-        } else if (collision.tag == "Keys")
+        }
+        else if (collision.tag == "Keys")
         {
             isNearbyKey = true;
             hint.SetActive(true);
         }
+<<<<<<< HEAD
 
         if (collision.name == "GarageTrigger")
         {
@@ -45,6 +47,8 @@ public class Trigger : MonoBehaviour
             MonsterAI.time = 0f;
         }
         
+=======
+>>>>>>> parent of 4b5a6fd (MonsterAI)
     }
 
     private void OnTriggerExit2D(Collider2D collision)
