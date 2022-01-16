@@ -33,11 +33,15 @@ public class Trigger : MonoBehaviour
         {
             isNearbyScientist = true;
             hint.SetActive(true);
-        }
-        else if (collision.tag == "Keys")
+        } else if (collision.tag == "Keys")
         {
             isNearbyKey = true;
             hint.SetActive(true);
+        }
+        
+        if (collision.name == "ReactorTrigger")
+        {
+            MonsterAI.isInReactor = true;
         }
     }
 
