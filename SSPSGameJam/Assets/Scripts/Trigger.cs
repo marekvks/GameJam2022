@@ -38,11 +38,13 @@ public class Trigger : MonoBehaviour
             isNearbyKey = true;
             hint.SetActive(true);
         }
-        
-        if (collision.name == "ReactorTrigger")
+
+        if (collision.name == "GarageTrigger")
         {
-            MonsterAI.isInReactor = true;
+            MonsterAI.monsterSpeed = 4.8f;
+            MonsterAI.time = 0f;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

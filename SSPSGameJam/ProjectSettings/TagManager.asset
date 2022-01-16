@@ -8,6 +8,7 @@ TagManager:
   - Collectables
   - Scientists
   - Keys
+  - East
   layers:
   - Default
   - TransparentFX

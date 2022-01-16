@@ -1,33 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonsterAI : MonoBehaviour
 {
-
-    [SerializeField]
     private float degree = 0f;
-    public float speed = 4.8f;
+    public static float monsterSpeed = 0f;
     private Vector2 playerPosition;
     public Transform player;
-    public Transform spawnPosition;
-    public Rigidbody2D monsterRB;
-    public float tempPlayerSpeed;
-    public float tempMonsterSpeed;
     public static bool isInReactor = false;
+    public static float time;
+    private Rigidbody2D monsterRB;
 
-    private float currentTime = 0;
+
+    private void Start()
+    {
+        monsterRB = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
         playerPosition = new Vector2(player.position.x, player.position.y);
-        Debug.Log(isInReactor);
-        if (isInReactor)
-        {
-            MonsterAppearance();
-            Debug.Log(currentTime);
-            currentTime += Time.deltaTime;
-        }
+        MonsterDisappear();
     }
 
     private void FixedUpdate()
@@ -45,37 +40,27 @@ public class MonsterAI : MonoBehaviour
 
     private void MonsterMove()
     {
-        monsterRB.transform.position += speed * Time.fixedDeltaTime * (-transform.up);
-        Debug.Log(monsterRB.transform.position);
+        monsterRB.transform.position += monsterSpeed * Time.fixedDeltaTime * (-monsterRB.transform.right);
     }
 
-    private void MonsterAppearance()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        switch(currentTime)
+        if (collision.collider.tag == "East")
         {
-            case 0:
-                PlayerRotate.canRotate = false;
-                monsterRB.position = spawnPosition.position;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
 
-                tempPlayerSpeed = PlayerMovement.moveSpeed;
-                tempMonsterSpeed = speed;
-                speed = 0f;
-                PlayerMovement.moveSpeed = 0f;
-                break;
-            case 3:
-                PlayerMovement.moveSpeed = tempPlayerSpeed;
-                speed = tempMonsterSpeed;
-
-                PlayerRotate.canRotate = true;
-
-                monsterRB.gameObject.SetActive(true);
-                break;
-            case 15:
-                speed /= 2;
-                break;
-            case 20:
-                monsterRB.gameObject.SetActive(false);
-                break;
+    private void MonsterDisappear()
+    {
+        if (monsterSpeed > 0f)
+        {
+            time += Time.deltaTime;
+            if (time >= 20)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
+
