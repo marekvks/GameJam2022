@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuNav : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject optionsMenu;
     public GameObject creditMenu;
     private List<GameObject> menuList = new List<GameObject>();
     private bool isInMain = false;
@@ -22,16 +21,6 @@ public class MenuNav : MonoBehaviour
     public void BeginGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void EnterOptions()
-    {
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
-        menuList.Add(mainMenu);
-        menuList.Add(optionsMenu);
-
-        isInMain = false;
     }
 
     public void EnterCredits()
