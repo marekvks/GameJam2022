@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PickUp : MonoBehaviour
 {
@@ -9,18 +11,27 @@ public class PickUp : MonoBehaviour
     private GameObject gameList;
     private List<char> tempList = new List<char>();
 
+    public TextMeshProUGUI scientistsSavedText;
+    private GameObject scientist;
+    private int savedScientists = 0;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearby)
+        if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyList)
         {
             list.SetActive(false);
             ListAssign();
+        } else if (Input.GetKeyDown(KeyCode.E) && Trigger.isNearbyScientist)
+        {
+            scientist.SetActive(false);
+            savedScientists += 1;
+            ChangeText(scientistsSavedText, $"Scientists Saved: { savedScientists }");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Collectables") { list = collision.gameObject; }
+        if (collision.tag == "Collectables") { list = collision.gameObject; } else if (collision.tag == "Scientists") { scientist = collision.gameObject; }
     }
 
 
@@ -36,5 +47,10 @@ public class PickUp : MonoBehaviour
         gameList = GameObject.Find("Game/UI/Inventory/Selection/Part" + id);
         Debug.Log(gameList.name);
         gameList.SetActive(true);
+    }
+
+    private void ChangeText(TextMeshProUGUI textObject, string message)
+    {
+        textObject.text = message;
     }
 }

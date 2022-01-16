@@ -6,6 +6,7 @@ TagManager:
   tags:
   - List
   - Collectables
+  - Scientists
   layers:
   - Default
   - TransparentFX
