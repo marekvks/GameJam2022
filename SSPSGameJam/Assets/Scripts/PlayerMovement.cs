@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public float moveSpeed = 5f;
+    public static float moveSpeed = 5f;
 
     bool canMove;
 
