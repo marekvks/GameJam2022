@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuNav : MonoBehaviour
 {
@@ -8,10 +9,19 @@ public class MenuNav : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject creditMenu;
     private List<GameObject> menuList = new List<GameObject>();
+    private bool isInMain = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isInMain)
+        {
+            ReturnToPrevMenu();
+        }
+    }
 
     public void BeginGame()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void EnterOptions()
@@ -20,6 +30,8 @@ public class MenuNav : MonoBehaviour
         optionsMenu.SetActive(true);
         menuList.Add(mainMenu);
         menuList.Add(optionsMenu);
+
+        isInMain = false;
     }
 
     public void EnterCredits()
@@ -28,12 +40,17 @@ public class MenuNav : MonoBehaviour
         creditMenu.SetActive(true);
         menuList.Add(mainMenu);
         menuList.Add(creditMenu);
+
+        isInMain = false;
     }
 
     public void ReturnToPrevMenu()
     {
         menuList[0].SetActive(true);
         menuList[1].SetActive(false);
+        menuList.Clear();
+
+        isInMain = true;
     }
 
     public void ExitGame()
