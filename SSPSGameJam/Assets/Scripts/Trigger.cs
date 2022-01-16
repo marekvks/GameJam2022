@@ -11,6 +11,7 @@ public class Trigger : MonoBehaviour
     public static bool isNearbyList = false;
     public static bool isNearbyScientist = false;
     public static bool isNearbyKey = false;
+    public static bool isNearbyGarage = false;
 
     private void Update()
     {
@@ -38,6 +39,10 @@ public class Trigger : MonoBehaviour
         {
             isNearbyKey = true;
             hint.SetActive(true);
+        } else if (collision.name == "Garage Door")
+        {
+            isNearbyGarage = true;
+            hint.SetActive(true);
         }
 
         if (collision.name == "GarageTrigger")
@@ -52,6 +57,7 @@ public class Trigger : MonoBehaviour
         isNearbyList = false;
         isNearbyScientist = false;
         isNearbyKey = false;
+        isNearbyGarage = false;
         animator.SetBool("hide", true);
     }
 }

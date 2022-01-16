@@ -16,7 +16,7 @@ public class PickUp : MonoBehaviour
     private int savedScientists = 0;
 
     private GameObject key;
-    private bool isKeyPickedUp = false;
+    public static bool isKeyPickedUp = false;
 
     private void Update()
     {
