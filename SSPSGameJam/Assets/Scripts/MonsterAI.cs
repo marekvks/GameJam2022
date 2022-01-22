@@ -61,7 +61,7 @@ public class MonsterAI : MonoBehaviour
             time += Time.deltaTime;
             if (time >= 20)
             {
-                gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }
