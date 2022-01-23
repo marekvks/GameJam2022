@@ -2355,6 +2355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1168953886}
   creditMenu: {fileID: 1997683726}
+  optionsMenu: {fileID: 1678420801}
+  main: {fileID: 964231322}
 --- !u!114 &964231324
 MonoBehaviour:
   m_ObjectHideFlags: 0
