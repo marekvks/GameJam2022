@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
+
 public class FreezeGame : MonoBehaviour
 {
     public GameObject inventoryMenu;
@@ -49,11 +49,6 @@ public class FreezeGame : MonoBehaviour
 
     public void ReturnToMain()
     {
-        Resume();
-        pauseMenu.SetActive(false);
-        inventoryMenu.SetActive(false);
-        Camera.main.gameObject.SetActive(false);
-        EventSystem.current.gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

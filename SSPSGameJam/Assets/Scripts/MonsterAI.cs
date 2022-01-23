@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -51,8 +50,6 @@ public class MonsterAI : MonoBehaviour
     {
         if (collision.collider.tag == "East")
         {
-            Camera.main.gameObject.SetActive(false);
-            EventSystem.current.gameObject.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
