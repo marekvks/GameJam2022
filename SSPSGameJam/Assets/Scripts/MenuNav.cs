@@ -11,6 +11,8 @@ public class MenuNav : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject main;
 
+    public Animator animator;
+
     private List<GameObject> menuList = new List<GameObject>();
     private bool isInMain = false;
 
@@ -20,6 +22,11 @@ public class MenuNav : MonoBehaviour
         {
             ReturnToPrevMenu();
         }
+    }
+
+    public void Transition()
+    {
+        animator.SetTrigger("menuTransition");
     }
 
     public void BeginGame()
