@@ -9,6 +9,8 @@ TagManager:
   - Scientists
   - Keys
   - East
+  - Light
+  - Audio
   layers:
   - Default
   - TransparentFX
