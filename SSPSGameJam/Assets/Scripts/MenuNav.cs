@@ -10,6 +10,8 @@ public class MenuNav : MonoBehaviour
     private List<GameObject> menuList = new List<GameObject>();
     private bool isInMain = false;
 
+    public Animator animator;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !isInMain)
@@ -21,6 +23,11 @@ public class MenuNav : MonoBehaviour
     public void BeginGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PlayTransition()
+    {
+        animator.SetTrigger("transition");
     }
 
     public void EnterCredits()
