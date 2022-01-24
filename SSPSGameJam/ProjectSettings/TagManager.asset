@@ -10,6 +10,8 @@ TagManager:
   - Keys
   - East
   - Audio
+  - Light
+  - Garage Door
   layers:
   - Default
   - TransparentFX
