@@ -59,6 +59,6 @@ public class FlashLight : MonoBehaviour
     void PercentAndUI()
     {
         percent = Mathf.Round(battery / (maxCapacity / 100));
-        PickUp.ChangeText(percentText, $"Battery: { percent }%");
+        PickUp.ChangeText(percentText, $"battery: { percent }%");
     }
 }
