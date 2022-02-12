@@ -7,15 +7,30 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public static float moveSpeed = 5f;
+    public static float moveSpeed;
+    private float walkSpeed = 5f;
+    private float runSpeed = 7f;
 
     bool canMove;
 
     private float vertical;
 
+    private void Start()
+    {
+        moveSpeed = walkSpeed;
+    }
+
     void Update()
     {
         vertical = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            moveSpeed = runSpeed;
+        } else
+        {
+            moveSpeed = walkSpeed;
+        }
 
         if (vertical == 1)
         {
