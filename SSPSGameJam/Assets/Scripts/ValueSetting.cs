@@ -25,21 +25,35 @@ public class ValueSetting : MonoBehaviour
         switch (index)
         {
             case 0:
-                PlayerPrefs.SetFloat("Brightness", sliders[0].value);
+                Save.SaveTemplate.sliderValues[index] = sliders[index].value;
+                texts[index].text = sliders[index].value + "%";
                 break;
             case 1:
-                PlayerPrefs.SetFloat("Volume", sliders[1].value);
+                Save.SaveTemplate.sliderValues[index] = sliders[index].value;
+                texts[index].text = sliders[index].value + "%";
+                break;
+            case 2:
+                Save.SaveTemplate.sliderValues[index] = sliders[index].value;
+                texts[index].text = (Mathf.Round((sliders[index].value / 4.8f) * 100)).ToString() + "%";
                 break;
 
         }
-        texts[index].text = sliders[index].value + "%";
-        Save.sliderValues[index] = sliders[index].value;
+        
+        Save.SaveTemplate.sliderValues[index] = sliders[index].value;
     }
 
     public void LoadFromSaveStorage(int index)
     {
-        sliders[index].value = Save.sliderValues[index];
-        texts[index].text = Save.sliderValues[index] + "%";
+        sliders[index].value = Save.SaveTemplate.sliderValues[index];
+
+        if (index == 2)
+        {
+            texts[index].text = (Mathf.Round((Save.SaveTemplate.sliderValues[index] / 4.8f) * 100)).ToString() + "%";
+            return;
+        }
+
+        texts[index].text = Save.SaveTemplate.sliderValues[index] + "%";
+
     }
 
 }

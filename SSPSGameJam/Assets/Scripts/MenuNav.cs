@@ -9,19 +9,26 @@ public class MenuNav : MonoBehaviour
     public GameObject mainMenu;
     public GameObject creditMenu;
     public GameObject optionsMenu;
+    public GameObject playMenu;
+    public GameObject customOptions;
     public GameObject main;
+    public static string currentDifficulty;
 
     public Animator animator;
 
     private List<GameObject> menuList = new List<GameObject>();
-    private bool isInMain = false;
 
-    private void Update()
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape) && !isInMain)
+    //    {
+    //        ReturnToPrevMenu();
+    //    }
+    //}
+
+    public void ReturnButton(string identifier)
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isInMain)
-        {
-            ReturnToPrevMenu();
-        }
+        currentDifficulty = identifier;
     }
 
     public void Transition()
@@ -37,6 +44,22 @@ public class MenuNav : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void DifficultyOptions()
+    {
+        mainMenu.SetActive(false);
+        playMenu.SetActive(true);
+        menuList.Add(mainMenu);
+        menuList.Add(playMenu);
+    }
+
+    public void EnterCustomOptions()
+    {
+        playMenu.SetActive(false);
+        customOptions.SetActive(true);
+        menuList.Add(playMenu);
+        menuList.Add(customOptions);
+    }
+
     public void EnterCredits()
     {
         mainMenu.SetActive(false);
@@ -44,7 +67,6 @@ public class MenuNav : MonoBehaviour
         menuList.Add(mainMenu);
         menuList.Add(creditMenu);
 
-        isInMain = false;
     }
 
     public void EnterOptions()
@@ -57,11 +79,14 @@ public class MenuNav : MonoBehaviour
 
     public void ReturnToPrevMenu()
     {
-        menuList[0].SetActive(true);
-        menuList[1].SetActive(false);
-        menuList.Clear();
+        menuList[menuList.Count - 2].SetActive(true);
+        menuList[menuList.Count - 1].SetActive(false);
+    }
 
-        isInMain = true;
+    public void ReturnToMain()
+    {
+        playMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
     public void ExitGame()

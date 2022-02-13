@@ -19,6 +19,7 @@ public class Trigger : MonoBehaviour
     public GameObject generatorMonster;
 
     private float randomNumber;
+    private float speed = 0f;
 
     private void Update()
     {
@@ -96,7 +97,22 @@ public class Trigger : MonoBehaviour
 
     private void SlowMonster()
     {
-        MonsterAI.monsterSpeed = 4.8f;
+        switch (MenuNav.currentDifficulty)
+        {
+            case "easy":
+                speed = 4.6f;
+                break;
+            case "normal":
+                speed = 4.75f;
+                break;
+            case "hard":
+                speed = 4.9f;
+                break;
+            case "custom":
+                speed = Save.SaveTemplate.sliderValues[2];
+                break;
+        }
+        MonsterAI.monsterSpeed = speed;
         MonsterAI.time = 0f;
     }
 }
