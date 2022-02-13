@@ -11,10 +11,13 @@ public class PickUp : MonoBehaviour
     private GameObject list;
     private GameObject gameList;
     private List<char> tempList = new List<char>();
+    private int maxListCount = 6;
 
     public TextMeshProUGUI scientistsSavedText;
     private GameObject scientist;
     private int savedScientists = 0;
+    private int maxScientistCount = 6;
+    
 
     private GameObject key;
     public static bool isKeyPickedUp = false;
@@ -22,6 +25,7 @@ public class PickUp : MonoBehaviour
 
 
     public GameObject endMenu;
+    public GameObject trueEndMenu;
 
 
 
@@ -47,10 +51,28 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Collectables") { list = collision.gameObject; } else if (collision.tag == "Scientists") { scientist = collision.gameObject; } else if (collision.tag == "Keys") { key = collision.gameObject; }
+        if (collision.tag == "Collectables") 
+        { 
+            list = collision.gameObject; 
+        } else if (collision.tag == "Scientists") 
+        { 
+            scientist = collision.gameObject; 
+        } else if (collision.tag == "Keys") 
+        { 
+            key = collision.gameObject; 
+        }
+
         if (collision.name == "CameraTrigger")
         {
-            endMenu.SetActive(true);
+            if(tempList.Count == maxListCount && savedScientists == maxScientistCount)
+            {
+                trueEndMenu.SetActive(true);
+            }
+            else
+            {
+                endMenu.SetActive(true);
+            }
+            
         }
     }
 
