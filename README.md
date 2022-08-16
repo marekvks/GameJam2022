@@ -1,3 +1,3 @@
 # GameJam2022
 
-### We are still working on this videogame :P
+### 2D Topdown game created for SSPŠ GameJam in collaboration with Frix63, streetzy & Technik05
