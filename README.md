@@ -1,6 +1,6 @@
 # GameJam2022
 
-## 2D Topdown game created for SSPŠ GameJam
+## 2D Topdown horror game created for SSPŠ GameJam
 
 ### Credits
 - streetzy - programming, story, level design
